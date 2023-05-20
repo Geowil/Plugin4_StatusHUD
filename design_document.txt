@@ -1,0 +1,107 @@
+Name: Status HUD
+Version: 0.01
+Description: Add a window to the Map Scene that shows lead character's status
+
+Plugin Params
+	Enable Status HUD
+		Boolean
+		False
+		When enabled, turns on the plugin and displays the status window.
+
+	Gauge Mode
+		Integer (1-2)
+			1 - bar gauges
+				When enabled, this option will move the hp/mp display into the top of the HUD window.
+				The portrait can then be set to either the left/right side.
+
+			2 - portrait gauges
+				When enabled, this option will move the hp/mp display to wrap around the portrait.
+				Window should be resized to a larger W/H to accommodate this.
+		1
+		Sets the display mode for the HP and MP gauges in the status HUD window.
+
+	HP Gauge Color
+		Text
+		Default HP Gauge Color
+		Sets the gauge color for HP gauge.
+
+	MP Gauge Color
+		Text
+		Default HP Gauge Color
+		Sets the gauge color for MP gauge.
+
+	Portrait Mode
+		Integer (1-2)
+			1 - Square
+				When enabled, places the character portrait inside of window in the top left/right corner.  Other elements are
+				adjusted to fit.
+
+			2 - Circular
+				When enabled, placed on the edge of the window, left or right, and is ringed by the HP/MP gauges.
+		1
+		Sets the display mode for the character portrait.
+
+	Portrait Location
+		Integer (1-2)
+		1
+		Set the side of the HUD window that the portrait is displayed on.  If Portrait Mode is 2, aligns to the end of the HUD window.
+
+	HUD Position
+		Integer (1-5)
+			1 - Top Left
+			2 - Top Middle
+			3 - Top Right
+			4 - Middle Left
+			5 - Middle Right
+		1
+		Sets the position that the HUD window is display at.
+
+	Display Level
+		Boolean
+		False
+		When enabled, displays the character level in the HUD window.
+
+	Display Class
+		Boolean
+		False
+		When enabled, display the character class in the HUD window.
+
+	Display Status
+		Boolean
+		False
+		When enabled, displays the set number of status icons in the HUD window.
+
+	Status Display Limit
+		Integer (1-x)
+		1
+		Sets the number of icons to be displayed in the status list.  Status order is based on prority.
+
+	Display EXP
+		Boolean
+		False
+		When enabled, display the EXP gauge with the HP/MP gauges.
+
+	EXP Gauge Color
+		Text
+		#FFFFEE
+		Sets the color for the EXP gauge.
+
+	Show Downed character
+		Boolean
+		False
+		When enabled, if the lead character is downed their status on the HUD window.  When disabled, the next character in the party is shown.
+
+
+Plugin Commands
+	TutorialPlugin4.StatusHUD Enabled 0/1
+		Params:
+			Boolean
+			true/false
+
+		Enables or disables the status HUD from in-game.
+
+
+Notes:
+	When not on a map, the HUD hidden, meaning if in another scene like shop or potentially when dialog is happening.
+	These use cases are technically already covered by the plugin command.
+
